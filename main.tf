@@ -35,7 +35,7 @@ resource "aws_security_group" "allow_all" {
 }
 
 resource "aws_instance" "server" {
-  ami           = "ami-0e53db6fd757e38c7"
+  ami           = "ami-0522ab6e1ddcc7055"
   instance_type = var.instance_type
   key_name = "key02"
   vpc_security_group_ids = [aws_security_group.allow_all.id]
@@ -55,7 +55,7 @@ resource "aws_instance" "server" {
   connection {
       type        = "ssh"
       host        = self.public_ip
-      user        = "ec2-user"
+      user        = "ubuntu"
       private_key = file(var.ssh_private_key)
    }
   provisioner "local-exec" {
