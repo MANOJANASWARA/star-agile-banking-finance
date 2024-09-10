@@ -55,7 +55,7 @@ resource "aws_instance" "server" {
   connection {
       type        = "ssh"
       host        = self.public_ip
-      user        = "ubuntu"
+      user        = "ec2-user"
       private_key = file(var.ssh_private_key)
    }
   provisioner "local-exec" {
