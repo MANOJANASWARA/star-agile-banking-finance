@@ -5,7 +5,7 @@ pipeline {
         AWS_SECRET_ACCESS_KEY = credentials('secret_key')
     }
     stages {
-        stage('Build the new Project') {
+        stage('Build new Project') {
             steps {
                 git 'https://github.com/MANOJANASWARA/star-agile-banking-finance.git'
                 sh 'mvn clean package'
